@@ -1,4 +1,4 @@
-# TesterLib
+# Testing TesterLib
 
 This file was automatically generated for Stamplay by APIMATIC v2.0 ([https://apimatic.io](https://apimatic.io)).
 
