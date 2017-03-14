@@ -8,7 +8,7 @@ var environments = require("../lib/Environments");
 
 var testConfiguration = {
     ASSERT_PRECISION: 0.1,
-    TEST_TIMEOUT: 60000
+    TEST_TIMEOUT: 9000
 };
 
 configuration.currentEnvironment = environments.TESTING;
