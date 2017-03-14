@@ -1,7 +1,7 @@
 {
-  "name": "testerlib",
-  "version": "1.1.0",
-  "description": "Testing various  api  features",
+  "name": "calclib",
+  "version": "1.0.0",
+  "description": "Simple calculator API hosted on APIMATIC",
   "main": "./lib/index.js",
   "scripts": {
     "test" : "mocha --recursive"
@@ -11,7 +11,6 @@
   "dependencies": {
     "request": "^2.55.0",
     "mocha": "^3.1.2",
-    "chai": "^3.5.0",
-    "moment": "^2.17.1"
+    "chai": "^3.5.0"
   }
 }
