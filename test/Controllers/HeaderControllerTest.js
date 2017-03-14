@@ -8,7 +8,7 @@ var moment = require("moment");
 var TestHelper = require("../TestHelper");
 var APIHelper = require("../../lib/APIHelper");
 var testerlib = require("../../lib");
-var config = require("../../lib/Configuration");
+var config = require("../../lib/configuration");
 var testConfiguration = require("../TestBootstrap");
 
 var controller = testerlib.HeaderController;
