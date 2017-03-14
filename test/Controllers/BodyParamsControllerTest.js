@@ -25,7 +25,7 @@ describe("BodyParamsController Tests", function tests() {
      */
     it("should testSendIntegerEnumArray response", function testSendIntegerEnumArrayTest(done) {
         // Parameters for the API call
-        var suites = "[1, 3, 4, 2, 3]";
+        var suites = [1, 3, 4, 2, 3];
 
         controller.sendIntegerEnumArray(suites, function callback(error, response, context) {
             // Test response code
@@ -41,7 +41,7 @@ describe("BodyParamsController Tests", function tests() {
      */
     it("should testSendStringEnumArray response", function testSendStringEnumArrayTest(done) {
         // Parameters for the API call
-        var days = "["Tuesday", "Saturday", "Wednesday", "Monday", "Sunday"]";
+        var days = ["Tuesday", "Saturday", "Wednesday", "Monday", "Sunday"];
 
         controller.sendStringEnumArray(days, function callback(error, response, context) {
             // Test response code
