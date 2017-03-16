@@ -147,7 +147,7 @@ describe("QueryParamController Tests", function tests() {
      */
     it("should testStringParam response", function testStringParamTest(done) {
         // Parameters for the API call
-        let string = 'l;asd;asdwe[2304&&;\\''.d??\\a\\\\\\;sd//';
+        let string = 'l;asd;asdwe[2304&&;\\`.d??\\a\\\\\\;sd//';
 
         controller.stringParam(string, function callback(error, response, context) {
             // Test response code
