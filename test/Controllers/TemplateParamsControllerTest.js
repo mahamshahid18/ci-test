@@ -3,16 +3,18 @@
  *
  * This file was automatically generated for Stamplay by APIMATIC v2.0 ( https://apimatic.io )
  */
-var assert = require("chai").assert;
-var moment = require("moment");
-var TestHelper = require("../TestHelper");
-var APIHelper = require("../../lib/APIHelper");
-var testerlib = require("../../lib");
-var config = require("../../lib/configuration");
-var testConfiguration = require("../TestBootstrap");
+ 'use strict';
 
-var controller = testerlib.TemplateParamsController;
-var EchoResponse = testerlib.EchoResponse;
+const assert = require("chai").assert;
+const moment = require("moment");
+const TestHelper = require("../TestHelper");
+const APIHelper = require("../../lib/APIHelper");
+const testerlib = require("../../lib");
+const config = require("../../lib/configuration");
+const testConfiguration = require("../TestBootstrap");
+
+const controller = testerlib.TemplateParamsController;
+const EchoResponse = testerlib.EchoResponse;
 
 describe("TemplateParamsController Tests", function tests() {
     this.timeout(testConfiguration.TEST_TIMEOUT);
@@ -22,7 +24,7 @@ describe("TemplateParamsController Tests", function tests() {
      */
     it("should testSendIntegerArray response", function testSendIntegerArrayTest(done) {
         // Parameters for the API call
-        var integers = [1, 2, 3, 4, 5];
+        let integers = [1, 2, 3, 4, 5];
 
         controller.sendIntegerArray(integers, function callback(error, response, context) {
             // Test response code
@@ -38,7 +40,7 @@ describe("TemplateParamsController Tests", function tests() {
      */
     it("should testSendStringArray response", function testSendStringArrayTest(done) {
         // Parameters for the API call
-        var strings = ["abc", "def"];
+        let strings = ["abc", "def"];
 
         controller.sendStringArray(strings, function callback(error, response, context) {
             // Test response code

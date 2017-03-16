@@ -3,16 +3,18 @@
  *
  * This file was automatically generated for Stamplay by APIMATIC v2.0 ( https://apimatic.io )
  */
-var assert = require("chai").assert;
-var moment = require("moment");
-var TestHelper = require("../TestHelper");
-var APIHelper = require("../../lib/APIHelper");
-var testerlib = require("../../lib");
-var config = require("../../lib/configuration");
-var testConfiguration = require("../TestBootstrap");
+ 'use strict';
 
-var controller = testerlib.HeaderController;
-var ServerResponse = testerlib.ServerResponse;
+const assert = require("chai").assert;
+const moment = require("moment");
+const TestHelper = require("../TestHelper");
+const APIHelper = require("../../lib/APIHelper");
+const testerlib = require("../../lib");
+const config = require("../../lib/configuration");
+const testConfiguration = require("../TestBootstrap");
+
+const controller = testerlib.HeaderController;
+const ServerResponse = testerlib.ServerResponse;
 
 describe("HeaderController Tests", function tests() {
     this.timeout(testConfiguration.TEST_TIMEOUT);
@@ -22,8 +24,8 @@ describe("HeaderController Tests", function tests() {
      */
     it("should testSendHeaders response", function testSendHeadersTest(done) {
         // Parameters for the API call
-        var customHeader = "TestString";
-        var value = "TestString";
+        let customHeader = 'TestString';
+        let value = 'TestString';
 
         controller.sendHeaders(customHeader, value, function callback(error, response, context) {
             // Test response code

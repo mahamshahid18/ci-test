@@ -1,11 +1,12 @@
 /*
  * This file was automatically generated for Stamplay by APIMATIC v2.0 ( https://apimatic.io )
  */
+ 'use strict';
 
 /**
  * Contains utility methods for comparing objects and arrays
  */
-var TestHelper = {
+const TestHelper = {
 
     /**
      * Helper function to get common elements of 2 arrays
@@ -36,10 +37,10 @@ var TestHelper = {
      * @return  {boolean}              True if respObj has extra keys as compared to expObj
      */
     hasExtraKeys: function hasExtraKeys(respObj, expObj) {
-        var respKeys = Object.keys(respObj);
-        var expKeys = Object.keys(expObj);
-        var common = TestHelper.getIntersection(respKeys, expKeys);
-        var commonLen = common.length;
+        let respKeys = Object.keys(respObj);
+        let expKeys = Object.keys(expObj);
+        let common = TestHelper.getIntersection(respKeys, expKeys);
+        let commonLen = common.length;
 
         return respKeys.length > common.length;
     },
@@ -52,15 +53,15 @@ var TestHelper = {
      * @return  {boolean}              True if order of elements of response and expected object match
      */
     checkOrdering: function checkOrdering(respObj, expObj, allow) {
-        var respKeys = Object.keys(respObj);
-        var expKeys = Object.keys(expObj);
+        let respKeys = Object.keys(respObj);
+        let expKeys = Object.keys(expObj);
 
-        var rIntersect = TestHelper.getIntersection(respKeys, expKeys);
-        var eIntersect = TestHelper.getIntersection(expKeys, respKeys);
+        let rIntersect = TestHelper.getIntersection(respKeys, expKeys);
+        let eIntersect = TestHelper.getIntersection(expKeys, respKeys);
 
-        var eqOrder = TestHelper.areEqual(rIntersect, eIntersect);
+        let eqOrder = TestHelper.areEqual(rIntersect, eIntersect);
 
-        var exKey = TestHelper.hasExtraKeys(respObj, expObj);
+        let exKey = TestHelper.hasExtraKeys(respObj, expObj);
         exKey = exKey && allow;
 
         return eqOrder;
@@ -75,13 +76,13 @@ var TestHelper = {
      * @return  {boolean}                True if response is a subset of expected
      */
     checkKeys: function checkKeys(response, expected, allow, ordered) {
-        var nestedCheck;
-        var objectInArray;
+        let nestedCheck;
+        let objectInArray;
 
-        var resp = Object.keys(response);
-        var exp = Object.keys(expected);
+        let resp = Object.keys(response);
+        let exp = Object.keys(expected);
 
-        for (var key in exp) {
+        for (let key in exp) {
             objectInArray = false;
             nestedCheck = false;
 
@@ -90,7 +91,7 @@ var TestHelper = {
             }
 
             if (expected[exp[key]] instanceof Array) {
-                for (var nk in expected[exp[key]]) {
+                for (let nk in expected[exp[key]]) {
                     if (expected[exp[key]][nk] instanceof Object) {
                         objectInArray = true;
                         break;
@@ -128,18 +129,18 @@ var TestHelper = {
      * @return  {boolean}                True if response is a subset of expected
      */
     checkVals: function checkVals(response, expected, allow, ordered) {
-        var objectInArray;
-        var nestedCheck;
+        let objectInArray;
+        let nestedCheck;
 
-        var resp = Object.keys(response);
-        var exp = Object.keys(expected);
+        let resp = Object.keys(response);
+        let exp = Object.keys(expected);
 
-        for (var key in exp) {
+        for (let key in exp) {
             objectInArray = false;
             nestedCheck = false;
 
-            var rVal = response[exp[key]];
-            var eVal = expected[exp[key]];
+            let rVal = response[exp[key]];
+            let eVal = expected[exp[key]];
 
             if (typeof (rVal) === "string" && typeof (eVal) === "string") {
                 if (!(rVal.toLowerCase() === eVal.toLowerCase())) {
@@ -150,7 +151,7 @@ var TestHelper = {
                     return false;
                 }
             } else if (eVal instanceof Array) {
-                for (var nk in exp[key]) {
+                for (let nk in exp[key]) {
                     if (eVal[nk] instanceof Object) {
                         objectInArray = true;
                         break;
@@ -236,8 +237,8 @@ var TestHelper = {
      * @return  {boolean}                True if it is a subset
      */
     isArrayOfStringifiedJsonObjectsProperSubsetOf: function isArrayOfStringifiedJsonObjectsProperSubsetOf(leftObject, rightObject, checkValues, allowExtra, isOrdered) {
-        var left = JSON.stringify(leftObject);
-        var right = JSON.stringify(rightObject);
+        let left = JSON.stringify(leftObject);
+        let right = JSON.stringify(rightObject);
 
         return TestHelper.isArrayOfJsonObjectsProperSubsetOf(left, right, checkValues, allowExtra, isOrdered);
     },
@@ -257,17 +258,17 @@ var TestHelper = {
                 return false;
             }
         }
-        var found;
+        let found;
 
-        for (var ri in right) {
+        for (let ri in right) {
             found = false;
 
-            var rightKey = ri;
-            var rightObj = right[ri];
+            let rightKey = ri;
+            let rightObj = right[ri];
 
-            for (var rj in left) {
-                var leftKey = rj;
-                var leftObj = left[rj];
+            for (let rj in left) {
+                let leftKey = rj;
+                let leftObj = left[rj];
 
                 if (TestHelper.isProperSubsetOf(leftObj, rightObj, checkValues, allowExtra, isOrdered, leftKey, rightKey)) {
                     if (isOrdered && checkValues) {
@@ -301,8 +302,8 @@ var TestHelper = {
      * @return  {boolean}            True if leftList is a subset of rightList
      */
     isListProperSubsetOf: function isListProperSubsetOf(leftList, rightList, allowExtra, isOrdered) {
-        var found = false;
-        var intersect;
+        let found = false;
+        let intersect;
 
         if (isOrdered && !allowExtra) {
             if (leftList.length !== rightList.length) {
@@ -323,7 +324,7 @@ var TestHelper = {
             intersect = TestHelper.getIntersection(leftList, rightList);
             intersect = intersect.sort();
 
-            for (var key in intersect) {
+            for (let key in intersect) {
                 if (key > rightList.length) {
                     break;
                 }
@@ -339,7 +340,7 @@ var TestHelper = {
             intersect = TestHelper.getIntersection(leftList, rightList);
             intersect = intersect.sort();
 
-            for (var key2 in intersect) {
+            for (let key2 in intersect) {
                 if (key2 > rightList.length) {
                     break;
                 }
@@ -364,14 +365,14 @@ var TestHelper = {
      * @return {boolean}                 True if leftTree is a subset of rightTree
      */
     areHeadersProperSubsetOf: function areHeadersProperSubsetOf(leftTree, rightTree, checkValues) {
-        var left = {};
-        var right = {};
+        let left = {};
+        let right = {};
 
-        for (var lkey in leftTree) {
+        for (let lkey in leftTree) {
             left[lkey.toLowerCase()] = leftTree[lkey];
         }
 
-        for (var rkey in rightTree) {
+        for (let rkey in rightTree) {
             right[rkey.toLowerCase()] = rightTree[rkey];
         }
 
@@ -386,12 +387,12 @@ var TestHelper = {
      * @return {stream}                  The contents of the file
      */
     getFileContents: function getFileContents(fileUrl, callback) {
-        var http = require("http");
-        var url = require("url");
-        var fs = require("fs");
-        var request = require("request");
-        var dir = "../Files";
-        var fileName = url.parse(fileUrl)
+        const http = require("http");
+        const url = require("url");
+        const fs = require("fs");
+        const request = require("request");
+        let dir = "../Files";
+        let fileName = url.parse(fileUrl)
             .pathname.split("/")
             .pop();
 
@@ -422,12 +423,12 @@ var TestHelper = {
      * @return {string}                  The path where the file is saved
      */
     getFilePath: function getFilePath(fileUrl, callback) {
-        var http = require("http");
-        var url = require("url");
-        var fs = require("fs");
-        var request = require("request");
-        var dir = "../Files";
-        var fileName = url.parse(fileUrl)
+        const http = require("http");
+        const url = require("url");
+        const fs = require("fs");
+        const request = require("request");
+        let dir = "../Files";
+        let fileName = url.parse(fileUrl)
             .pathname.split("/")
             .pop();
 

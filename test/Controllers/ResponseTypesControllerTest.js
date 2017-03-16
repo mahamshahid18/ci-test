@@ -3,18 +3,20 @@
  *
  * This file was automatically generated for Stamplay by APIMATIC v2.0 ( https://apimatic.io )
  */
-var assert = require("chai").assert;
-var moment = require("moment");
-var TestHelper = require("../TestHelper");
-var APIHelper = require("../../lib/APIHelper");
-var testerlib = require("../../lib");
-var config = require("../../lib/configuration");
-var testConfiguration = require("../TestBootstrap");
+ 'use strict';
 
-var controller = testerlib.ResponseTypesController;
-var SuiteCode = testerlib.SuiteCode;
-var Employee = testerlib.Employee;
-var Days = testerlib.Days;
+const assert = require("chai").assert;
+const moment = require("moment");
+const TestHelper = require("../TestHelper");
+const APIHelper = require("../../lib/APIHelper");
+const testerlib = require("../../lib");
+const config = require("../../lib/configuration");
+const testConfiguration = require("../TestBootstrap");
+
+const controller = testerlib.ResponseTypesController;
+const SuiteCode = testerlib.SuiteCode;
+const Employee = testerlib.Employee;
+const Days = testerlib.Days;
 
 describe("ResponseTypesController Tests", function tests() {
     this.timeout(testConfiguration.TEST_TIMEOUT);
@@ -28,7 +30,7 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // this means it is a primitive array
-            var expected = [1484719381, 1484719381];
+            let expected = [1484719381, 1484719381];
 
             response = response.map(function mapper(resp) {
                 return new Date(resp).getTime();
@@ -47,7 +49,7 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // this means it is a primitive array
-            var expected = ["Sun, 06 Nov 1994 08:49:37 GMT", "Sun, 06 Nov 1994 08:49:37 GMT"];
+            let expected = ["Sun, 06 Nov 1994 08:49:37 GMT", "Sun, 06 Nov 1994 08:49:37 GMT"];
 
             response = response.map(function mapper(resp) {
                 return new Date(resp).toUTCString();
@@ -80,7 +82,7 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // not an array, do simple check
-            assert.equal(new Date("Sun, 06 Nov 1994 08:49:37 GMT").toUTCString(), response);
+            assert.equal(new Date('Sun, 06 Nov 1994 08:49:37 GMT').toUTCString(), response);
             done();
         });
     });
@@ -93,9 +95,9 @@ describe("ResponseTypesController Tests", function tests() {
             // Test response code
             assert.equal(200, context.response.statusCode);
             // Test headers
-            var headers = [];
-            headers["NauManAli"] = null;
-            headers["WaseemHasAn"] = null;
+            let headers = [];
+            headers['NauManAli'] = null;
+            headers['WaseemHasAn'] = null;
             assert.isTrue(TestHelper.areHeadersProperSubsetOf(headers, context.response.headers, true));
             done();
         });
@@ -110,7 +112,7 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // this means it is a primitive array
-            var expected = [true, false, true, true, false];
+            let expected = [true, false, true, true, false];
 
             assert.equal(TestHelper.isListProperSubsetOf(response, expected, true, false), true);
             done();
@@ -140,7 +142,7 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // this means it is a primitive array
-            var expected = ["2016-03-13T12:52:32.123Z", "2016-03-13T12:52:32.123Z", "2016-03-13T12:52:32.123Z"];
+            let expected = ["2016-03-13T12:52:32.123Z", "2016-03-13T12:52:32.123Z", "2016-03-13T12:52:32.123Z"];
 
             expected = expected.map(function expMapper(exp) {
                 return moment(exp).parseZone().format();
@@ -162,7 +164,7 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // not an array, do simple check
-            assert.equal(moment("2016-03-13T12:52:32.123Z").parseZone().format(), response);
+            assert.equal(moment('2016-03-13T12:52:32.123Z').parseZone().format(), response);
             done();
         });
     });
@@ -202,7 +204,7 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // this means it is a primitive array
-            var expected = [1, 2, 3, 4, 5];
+            let expected = [1, 2, 3, 4, 5];
 
             assert.equal(TestHelper.isListProperSubsetOf(response, expected, true, false), true);
             done();
@@ -227,7 +229,7 @@ describe("ResponseTypesController Tests", function tests() {
      * Todo Add description for test testGetBinary
      */
     it("should testGetBinary response", function testGetBinaryTest(done) {
-        TestHelper.getFileContents("https://dl.dropboxusercontent.com/u/31838656/binary.png", function fileContents(data) {
+        TestHelper.getFileContents('https://dl.dropboxusercontent.com/u/31838656/binary.png', function fileContents(data) {
             controller.getBinary(function callback(error, response, context) {
                 // Test response code
                 assert.equal(200, context.response.statusCode);
@@ -261,7 +263,7 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // this means it is a primitive array
-            var expected = [1, 3, 4, 2, 3];
+            let expected = [1, 3, 4, 2, 3];
 
             assert.equal(TestHelper.isListProperSubsetOf(response, expected, true, false), true);
             done();
@@ -277,7 +279,7 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // not an array, do simple check
-            assert.equal(parseInt("3"), response);
+            assert.equal(parseInt('3'), response);
             done();
         });
     });
@@ -304,7 +306,7 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // not an array, do simple check
-            assert.equal("Monday", response);
+            assert.equal('Monday', response);
             done();
         });
     });
@@ -318,7 +320,7 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // this means it is a primitive array
-            var expected = ["Tuesday", "Saturday", "Wednesday", "Monday", "Sunday"];
+            let expected = ["Tuesday", "Saturday", "Wednesday", "Monday", "Sunday"];
 
             assert.equal(TestHelper.isListProperSubsetOf(response, expected, true, false), true);
             done();
@@ -361,7 +363,7 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // not an array, do simple check
-            assert.equal(moment("1994-02-13").format("YYYY-MM-DD"), response);
+            assert.equal(moment('1994-02-13').format('YYYY-MM-DD'), response);
             done();
         });
     });
@@ -375,10 +377,10 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // this means it is a primitive array
-            var expected = ["1994-02-13", "1994-02-13"];
+            let expected = ["1994-02-13", "1994-02-13"];
 
             response = response.map(function mapper(resp) {
-                return moment(resp).format("YYYY-MM-DD");
+                return moment(resp).format('YYYY-MM-DD');
             });
             assert.equal(TestHelper.isListProperSubsetOf(response, expected, true, false), true);
             done();
