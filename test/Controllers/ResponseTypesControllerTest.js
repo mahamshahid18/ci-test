@@ -279,7 +279,7 @@ describe("ResponseTypesController Tests", function tests() {
             assert.equal(200, context.response.statusCode);
             assert.isNotNull(response);
             // not an array, do simple check
-            assert.equal(parseInt('3'), response);
+            assert.equal(parseInt('3', 10), response);
             done();
         });
     });
