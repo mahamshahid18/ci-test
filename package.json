@@ -4,8 +4,8 @@
   "description": "Testing various  api  features",
   "main": "./lib/index.js",
   "scripts": {
-    "test" : "mocha --recursive",
-    "lint" : "eslint lib"
+    "lint": "eslint lib",
+    "test": "mocha --recursive"
   },
   "keywords": [],
   "author": "APIMATIC SDK Generator",

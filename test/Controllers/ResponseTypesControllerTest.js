@@ -229,7 +229,7 @@ describe("ResponseTypesController Tests", function tests() {
      * Todo Add description for test testGetBinary
      */
     it("should testGetBinary response", function testGetBinaryTest(done) {
-        TestHelper.getFileContents('https://dl.dropboxusercontent.com/u/31838656/binary.png', function fileContents(data) {
+        TestHelper.getFileContents('http://localhost:3000/response/image', function fileContents(data) {
             controller.getBinary(function callback(error, response, context) {
                 // Test response code
                 assert.equal(200, context.response.statusCode);

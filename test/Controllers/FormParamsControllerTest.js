@@ -76,7 +76,7 @@ describe("FormParamsController Tests", function tests() {
      * Todo Add description for test testSendFile
      */
     it("should testSendFile response", function testSendFileTest(done) {
-        TestHelper.getFilePath('https://dl.dropboxusercontent.com/u/31838656/binary.png', function filePath(data) {
+        TestHelper.getFilePath('http://localhost:3000/response/image', function filePath(data) {
             // Parameters for the API call
             let file = data;
 
@@ -112,7 +112,7 @@ describe("FormParamsController Tests", function tests() {
      * Todo Add description for test testSendMixedArray
      */
     it("should testSendMixedArray response", function testSendMixedArrayTest(done) {
-        TestHelper.getFilePath('https://dl.dropboxusercontent.com/u/31838656/binary.png', function filePath(data) {
+        TestHelper.getFilePath('http://localhost:3000/response/image', function filePath(data) {
             // Parameters for the API call
             let input = [];
             input['file'] = data;
