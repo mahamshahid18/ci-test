@@ -109,8 +109,8 @@ describe("QueryParamController Tests", function tests() {
         // Parameters for the API call
         let number = 123412312;
         let precision = 1112.34;
-        let string = '\"\"test./;\";12&&3asl\"\";\"qw1&34\"///..//.';
-        let url = 'http://www.abc.com/test?a=b&c=\"http://lolol.com?param=no&another=lol\"';
+        let string = '""test./;";12&&3asl"";"qw1&34"///..//.';
+        let url = 'http://www.abc.com/test?a=b&c="http://lolol.com?param=no&another=lol"';
 
         controller.multipleParams(number, precision, string, url, function callback(error, response, context) {
             // Test response code
