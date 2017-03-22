@@ -1,5 +1,8 @@
 environment:
-  nodejs_version: "4"
+  nodejs_version: "4.5"
+matrix:
+  allow_failures:
+    - nodejs_version: "4.5"
 
 # Install scripts.
 install:
