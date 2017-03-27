@@ -8,18 +8,14 @@ matrix:
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm install
-  - npm install eslint
-  - npm install eslint-config-airbnb
+  - node --version
+  - npm --version
 
 # Post-install test scripts.
 test_script:
   # command to run linter
   - npm run lint
-  # Output useful info for debugging.
-  - node --version
-  - npm --version
   # run tests
   - npm test
-
 # Don't actually build.
 build: off

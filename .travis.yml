@@ -3,11 +3,6 @@ node_js:
   - "4.5"
 # command to install dependencies
 install: npm install
-# command to install linter and 
-# airbnb style config files
-before_script:
-  - npm install eslint
-  - npm install eslint-config-airbnb
 # command to run linter and tests
 script:
   - npm run lint

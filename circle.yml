@@ -1,10 +1,6 @@
 machine:
   node:
     version: 4.5
-dependencies:
-  pre:
-    - npm install eslint
-    - npm install eslint-config-airbnb
 test:
   pre:
     - npm run lint
