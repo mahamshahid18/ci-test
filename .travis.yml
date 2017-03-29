@@ -2,7 +2,9 @@ language: node_js
 node_js:
   - "4.0"
 # command to install dependencies
-install: npm install
+install: 
+  - node --version
+  - npm install
 # command to run linter and tests
 script:
   - npm run lint
